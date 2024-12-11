@@ -16,7 +16,7 @@
 
       <figure class="hero-banner">
         <img
-          src="../assets/imagenes/._..jpg"
+          src="../assets/imagenes/hero.jpg"
           width="720"
           height="673"
           alt="hero banner"

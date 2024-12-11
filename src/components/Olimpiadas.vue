@@ -1,5 +1,5 @@
 <template>
-    <section class="section about" id="olimpiadas" aria-label="about" >
+    <section class="section about" id="olimpiadas" aria-label="about">
       <div class="container">
         <div class="about-banner img-holder" style="--width: 720; --height: 960">
           <img
@@ -8,7 +8,7 @@
             height="960"
             loading="lazy"
             alt="Participantes das Olimpíadas Rurais"
-            class="img-cover"
+            class="img-cover image-animated"
           />
   
           <button class="play-btn" aria-label="Ver video explicativo">
@@ -67,112 +67,132 @@
     </section>
   </template>
   
-
-<style scoped>
-.about {
-  background-color: var(--white-2);
-}
-
-.about-banner {
-  position: relative;
-  border-radius: var(--radius-5);
-  overflow: hidden;
-  margin-block-end: 25px;
-}
-
-.play-btn {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: var(--white-1);
-  color: var(--safety-orange);
-  font-size: 32px;
-  padding: 16px;
-  border-radius: 50%;
-  animation: pulse 1.5s ease-out infinite;
-}
-
-@keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 1px var(--white-1);
+  <style scoped>
+  .about {
+    background-color: var(--white-2);
   }
-  100% {
-    box-shadow: 0 0 0 25px transparent;
-  }
-}
-
-.about :is(.section-title, .section-text) {
-  text-align: left;
-}
-
-.about .section-title {
-  margin-block-end: 5px;
-}
-
-.about .section-text:not(:last-child) {
-  margin-block-end: 18px;
-}
-
-.about .h3 {
-  margin-block-end: 8px;
-}
-
-.about-list {
-  margin-block: 15px 18px;
-}
-
-.about-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 5px;
-}
-
-.about-item ion-icon {
-  color: var(--safety-orange);
-  flex-shrink: 0;
-  margin-block-start: 2px;
-}
-
-.about-item:not(:last-child) {
-  margin-block-end: 12px;
-}
-
-@media (min-width: 768px) {
+  
   .about-banner {
-    max-width: 550px;
+    position: relative;
+    border-radius: var(--radius-5);
+    overflow: hidden;
+    margin-block-end: 25px;
+    animation: fadeIn 1s ease-out;
   }
-
-  .about .section-text {
-    max-width: unset;
-    margin-inline: 0;
+  
+  .play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--white-1);
+    color: var(--safety-orange);
+    font-size: 32px;
+    padding: 16px;
+    border-radius: 50%;
+    animation: pulse 1.5s ease-out infinite;
   }
-}
-
-@media (min-width: 992px) {
-  .about .container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    gap: 30px;
+  
+  .about-content {
+    animation: fadeIn 2s ease-out;
   }
-
-  .about-banner {
-    margin-block-end: 0;
+  
+  .about :is(.section-title, .section-text) {
+    text-align: left;
   }
-}
-
-@media (min-width: 1200px) {
-  .about .container {
-    gap: 60px;
+  
+  .about .section-title {
+    margin-block-end: 5px;
+    animation: fadeIn 2.5s ease-out;
   }
-
+  
+  .about .section-text:not(:last-child) {
+    margin-block-end: 18px;
+    animation: fadeIn 3s ease-out;
+  }
+  
+  .about .h3 {
+    margin-block-end: 8px;
+    animation: fadeIn 3.5s ease-out;
+  }
+  
+  .about-list {
+    margin-block: 15px 18px;
+  }
+  
   .about-item {
-    gap: 7px;
+    display: flex;
+    align-items: flex-start;
+    gap: 5px;
+    animation: fadeIn 4s ease-out;
   }
-
+  
   .about-item ion-icon {
-    font-size: 20px;
+    color: var(--safety-orange);
+    flex-shrink: 0;
+    margin-block-start: 2px;
   }
-}
-</style>
+  
+  .about-item:not(:last-child) {
+    margin-block-end: 12px;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 1px var(--white-1);
+    }
+    100% {
+      box-shadow: 0 0 0 25px transparent;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .about-banner {
+      max-width: 550px;
+    }
+  
+    .about .section-text {
+      max-width: unset;
+      margin-inline: 0;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .about .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 30px;
+    }
+  
+    .about-banner {
+      margin-block-end: 0;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .about .container {
+      gap: 60px;
+    }
+  
+    .about-item {
+      gap: 7px;
+    }
+  
+    .about-item ion-icon {
+      font-size: 20px;
+    }
+  }
+  </style>
+  

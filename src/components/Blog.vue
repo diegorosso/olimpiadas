@@ -43,7 +43,7 @@
                 style="--width: 860; --height: 646"
               >
                 <img
-                  src="../assets/imagenes/flyer2.JPEG"
+                  src="../assets/imagenes/flyer2.jpeg"
                   width="860"
                   height="646"
                   loading="lazy"

@@ -15,7 +15,7 @@
                 style="--width: 510; --height: 700"
               >
                 <img
-                  src="./assets/images/project-1.jpg"
+                  
                   width="510"
                   height="700"
                   loading="lazy"
@@ -43,7 +43,7 @@
                 style="--width: 510; --height: 700"
               >
                 <img
-                  src="./assets/images/project-2.jpg"
+                  
                   width="510"
                   height="700"
                   loading="lazy"
@@ -71,7 +71,7 @@
                 style="--width: 510; --height: 700"
               >
                 <img
-                  src="./assets/images/project-3.jpg"
+                 
                   width="510"
                   height="700"
                   loading="lazy"
@@ -99,7 +99,7 @@
                 style="--width: 510; --height: 700"
               >
                 <img
-                  src="./assets/images/project-4.jpg"
+                  
                   width="510"
                   height="700"
                   loading="lazy"
@@ -127,7 +127,7 @@
                 style="--width: 510; --height: 700"
               >
                 <img
-                  src="./assets/images/project-5.jpg"
+                  
                   width="510"
                   height="700"
                   loading="lazy"
@@ -155,7 +155,7 @@
                 style="--width: 510; --height: 700"
               >
                 <img
-                  src="./assets/images/project-6.jpg"
+                 
                   width="510"
                   height="700"
                   loading="lazy"

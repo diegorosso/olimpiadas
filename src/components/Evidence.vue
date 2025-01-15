@@ -57,17 +57,16 @@
 <script>
 import lanzamiento from "@/assets/imagenes/pruebas/lanzamientoDeAdoquin.WEBP";
 import lazos from "@/assets/imagenes/pruebas/carreraDeLazos.WEBP";
-import mizos from "@/assets/imagenes/pruebas/mizos.WEBP";
-import tiradores from "@/assets/imagenes/pruebas/tiradores.WEBP";
+import mizos from "@/assets/imagenes/pruebas/mizos.WEBP"
 import cucuña from "@/assets/imagenes/pruebas/cucuña.WEBP";
-import zancos from "@/assets/imagenes/pruebas/zancos.WEBP";
+
 import cuerda from "@/assets/imagenes/pruebas/cuerda.WEBP";
 import cintas from "@/assets/imagenes/pruebas/cintas.WEBP";
 import comba from "@/assets/imagenes/pruebas/comba.WEBP";
 import piolas from "@/assets/imagenes/pruebas/piolas.WEBP";
 import carrerasacos from "@/assets/imagenes/pruebas/carreraDeSacos.WEBP";
 import garrote from "@/assets/imagenes/pruebas/garrote.WEBP";
-import silliña from "@/assets/imagenes/pruebas/silliñaDeRaiña.WEBP";
+
 import carretilla from "@/assets/imagenes/pruebas/carretilla.WEBP";
 
 export default {

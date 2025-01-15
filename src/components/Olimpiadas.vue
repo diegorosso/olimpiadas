@@ -12,7 +12,7 @@
           />
   
           <button class="play-btn" aria-label="Ver video explicativo">
-            <ion-icon name="play" aria-hidden="true"></ion-icon>
+            <ion-icon  name="play" aria-hidden="true"></ion-icon>
           </button>
         </div>
   

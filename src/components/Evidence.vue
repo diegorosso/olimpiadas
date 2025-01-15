@@ -57,7 +57,7 @@
 <script>
 import lanzamiento from "@/assets/imagenes/pruebas/lanzamientoDeAdoquin.JPG";
 import lazos from "@/assets/imagenes/pruebas/carreraDeLazos.JPG";
-import mizos from "@/assets/imagenes/pruebas/mizos.JPG";
+import mizos from '@/assets/imagenes/pruebas/mizos.JPG';
 import tiradores from "@/assets/imagenes/pruebas/tiradores.JPG";
 import cucuña from "@/assets/imagenes/pruebas/cucuña.JPG";
 import zancos from "@/assets/imagenes/pruebas/zancos.JPG";

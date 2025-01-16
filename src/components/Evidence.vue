@@ -56,7 +56,7 @@
 
 <script>
 
-import lazos from "@/assets/carreraDeLazos.WEBP";
+import lazos from "../assets/carreraDeLazos.WEBP";
 
 
 export default {

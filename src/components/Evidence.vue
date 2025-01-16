@@ -56,18 +56,8 @@
 
 <script>
 
-import lazos from "@/assets/imagenes/pruebas/carreraDeLazos.WEBP";
-import mizos from "@/assets/imagenes/pruebas/mizos.WEBP";
-import cucuña from "@/assets/imagenes/pruebas/cucuña.WEBP";
+import lazos from "@/assets/carreraDeLazos.WEBP";
 
-import cuerda from "@/assets/imagenes/pruebas/cuerda.WEBP";
-import cintas from "@/assets/imagenes/pruebas/cintas.WEBP";
-import comba from "@/assets/imagenes/pruebas/comba.WEBP";
-import piolas from "@/assets/imagenes/pruebas/piolas.WEBP";
-import carrerasacos from "@/assets/imagenes/pruebas/carreraDeSacos.WEBP";
-import garrote from "@/assets/imagenes/pruebas/garrote.WEBP";
-
-import carretilla from "@/assets/imagenes/pruebas/carretilla.WEBP";
 
 export default {
   data() {
@@ -81,98 +71,6 @@ export default {
           img: lazos,
           description:
             "Carrera donde los participantes deben completar un circuito con obstáculos mientras portan lazos.",
-        },
-        {
-          title: "Mizos",
-          subtitle: "Forza e Precisión",
-          alt: "Mizos",
-          img: mizos,
-          description:
-            "Proba de habilidade que require forza e precisión para superar o reto.",
-        },
-        {
-          title: "Tiradores",
-          subtitle: "Resistencia",
-          alt: "Tiradores",
-          description:
-            "Proba de resistencia onde é necesario manter a forza constante.",
-        },
-        {
-          title: "Cucaña",
-          subtitle: "Traballo en Equipo",
-          alt: "Cucaña",
-          img: cucuña,
-          description:
-            "Proba tradicional que fomenta o traballo en equipo para acadar o obxectivo.",
-        },
-        {
-          title: "Zancos",
-          subtitle: "Velocidade e Axilidade",
-          description:
-            "Proba divertida que pon a proba o equilibrio e a axilidade nos zancos.",
-        },
-        {
-          title: "Cuerda",
-          subtitle: "Velocidade e Axilidade",
-          alt: "Cuerda",
-          img: cuerda,
-          description:
-            "Proba clásica de axilidade e velocidade co uso da corda.",
-        },
-        {
-          title: "Cintas",
-          subtitle: "Velocidade e Axilidade",
-          alt: "Cintas",
-          img: cintas,
-          description:
-            "Desafío que require destreza para manipular as cintas coa máxima precisión.",
-        },
-        {
-          title: "Comba",
-          subtitle: "Velocidade e Axilidade",
-          alt: "Comba",
-          img: comba,
-          description:
-            "Unha actividade que combina axilidade e coordinación no salto da comba.",
-        },
-        {
-          title: "Piolas",
-          subtitle: "Velocidade e Axilidade",
-          alt: "Piolas",
-          img: piolas,
-          description:
-            "Proba de velocidade e axilidade manexando as piolas con habilidade.",
-        },
-        {
-          title: "Carrera de Sacos",
-          subtitle: "Velocidade e Axilidade",
-          alt: "Carrera de Sacos",
-          img: carrerasacos,
-          description:
-            "Competición divertida onde a velocidade e o equilibrio son clave.",
-        },
-        {
-          title: "Garrote",
-          subtitle: "Velocidade e Axilidade",
-          alt: "Garrote",
-          img: garrote,
-          description:
-            "Proba que combina forza, rapidez e destreza no uso do garrote.",
-        },
-        {
-          title: "Silliña de Raiña",
-          subtitle: "Velocidade e Axilidade",
-          alt: "Silliña de Raiña",
-          description:
-            "Un reto tradicional que require traballo en equipo e coordinación.",
-        },
-        {
-          title: "Carretilla",
-          subtitle: "Velocidade e Axilidade",
-          alt: "Carretilla",
-          img: carretilla,
-          description:
-            "Proba que require equilibrio e coordinación para avanzar coa carretilla.",
         },
       ],
       selectedProject: null, // Proyecto seleccionado

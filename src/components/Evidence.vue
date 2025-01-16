@@ -55,7 +55,7 @@
 </template>
 
 <script>
-import lanzamiento from "@/assets/imagenes/pruebas/lanzamientoDeAdoquin.WEBP";
+
 import lazos from "@/assets/imagenes/pruebas/carreraDeLazos.WEBP";
 import mizos from "@/assets/imagenes/pruebas/mizos.WEBP";
 import cucuña from "@/assets/imagenes/pruebas/cucuña.WEBP";
@@ -73,14 +73,7 @@ export default {
   data() {
     return {
       projects: [
-        {
-          title: "Lanzamiento de Adoquín",
-          subtitle: "Habilidade e Forza",
-          alt: "Lanzamiento de Adoquín",
-          img: lanzamiento,
-          description:
-            "Consiste en lanzar un adoquín lo más lejos posible usando fuerza y técnica.",
-        },
+
         {
           title: "Carrera de Lazos",
           subtitle: "Destreza e Velocidade",

@@ -1,7 +1,11 @@
 <template>
   <header class="header" :class="{ active: headerActive }" data-header>
     <div class="container">
-      <img  src="../assets/imagenes/Sin título-1.png" alt="">
+      <img
+        class="imagen-logo"
+        src="../assets/imagenes/Sin título-1.png"
+        alt=""
+      />
 
       <nav
         class="navbar container"
@@ -20,32 +24,25 @@
             >
           </li>
           <li>
-            <a href="#blog" class="navbar-link" @click="closeNavbar"
-              >Blog</a
-            >
+            <a href="#blog" class="navbar-link" @click="closeNavbar">Blog</a>
           </li>
           <li>
             <a href="#contact" class="navbar-link" @click="closeNavbar"
               >Contacto</a
             >
           </li>
-          <li><a href="#" class="btn btn-primary">Máis información</a></li>
         </ul>
       </nav>
 
-      <button
-        class="nav-toggle-btn"
-        aria-label="Toggle menu"
-        @click="toggleNavbar"
-      >
+      <button aria-label="Toggle menu displaynone" @click="toggleNavbar">
         <ion-icon
           name="menu-outline"
-          class="open"
+          class="open bottone"
           v-if="!navbarActive"
         ></ion-icon>
         <ion-icon
           name="close-outline"
-          class="close"
+          class="close bottone"
           v-if="navbarActive"
         ></ion-icon>
       </button>
@@ -179,11 +176,19 @@ export default {
   margin-block-start: 10px;
 }
 
+.bottone {
+  width: 40px;
+  height: 40px;
+}
+  
 @media (min-width: 992px) {
+  
   .nav-toggle-btn {
     display: none;
   }
-
+  .bottone {
+    display: none;
+  }
   .navbar,
   .navbar.active {
     all: unset;
@@ -225,5 +230,10 @@ export default {
     margin-block-start: 0;
   }
 }
-
+.imagen-logo {
+  height: 50px;
+}
+.navbar {
+    order: 1; /* Mueve la navegación al extremo izquierdo */
+  }
 </style>

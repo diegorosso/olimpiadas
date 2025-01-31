@@ -15,21 +15,21 @@
                 style="--width: 860; --height: 646"
               >
                 <img
-                  src="../assets/imagenes/flyer.jpg"
+                  src="../assets/imagenes/fotos/pruebas/speakers/spekers1.webp"
                   width="860"
                   height="646"
                   loading="lazy"
-                  alt="Inauguración de las Olimpiadas Rurais 2024"
+                  alt="Inauguración de las Olimpiadas Rurais 2025"
                   class="img-cover"
                 />
               </figure>
   
               <div class="card-content">
-                <time class="time" datetime="2024-12-01">Diciembre 1, 2024</time>
+                <time class="time" datetime="2025-12-01">Diciembre 1, 2025</time>
   
                 <h3 class="h3">
                   <a href="#" class="card-title"
-                    >Inauguración de las Olimpiadas Rurais 2024</a
+                    >Inauguración de las Olimpiadas Rurais 2025</a
                   >
                 </h3>
               </div>
@@ -53,7 +53,7 @@
               </figure>
   
               <div class="card-content">
-                <time class="time" datetime="2024-12-02">Diciembre 2, 2024</time>
+                <time class="time" datetime="2025-12-02">Diciembre 2, 2025</time>
   
                 <h3 class="h3">
                   <a href="#" class="card-title"
@@ -81,7 +81,7 @@
               </figure>
   
               <div class="card-content">
-                <time class="time" datetime="2024-12-03">Diciembre 3, 2024</time>
+                <time class="time" datetime="2025-12-03">Diciembre 3, 2025</time>
   
                 <h3 class="h3">
                   <a href="#" class="card-title"
@@ -99,7 +99,7 @@
                 style="--width: 860; --height: 646"
               >
                 <img
-                  src="../assets/imagenes/canasto.webp"
+                  src="../assets/imagenes/fotos/pruebas/speakers/speker2.webp"
                   width="860"
                   height="646"
                   loading="lazy"
@@ -109,7 +109,7 @@
               </figure>
   
               <div class="card-content">
-                <time class="time" datetime="2024-12-04">Diciembre 4, 2024</time>
+                <time class="time" datetime="2025-12-04">Diciembre 4, 2025</time>
   
                 <h3 class="h3">
                   <a href="#" class="card-title"
@@ -127,7 +127,7 @@
                 style="--width: 860; --height: 646"
               >
                 <img
-                  src="../assets/imagenes/prueba 2.webp"
+                  src="../assets/imagenes/fotos/pruebas/Final/final8.webp"
                   width="860"
                   height="646"
                   loading="lazy"
@@ -137,7 +137,7 @@
               </figure>
   
               <div class="card-content">
-                <time class="time" datetime="2024-12-05">Diciembre 5, 2024</time>
+                <time class="time" datetime="2025-12-05">Diciembre 5, 2025</time>
   
                 <h3 class="h3">
                   <a href="#" class="card-title"

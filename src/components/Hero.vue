@@ -11,7 +11,7 @@
           espírito deportivo no campo.
         </p>
 
-        <a href="#" class="btn btn-primary">Máis información</a>
+        <router-link to="/galeria" class="btn btn-primary">Galería de imágenes</router-link>
       </div>
 
       <figure class="hero-banner">

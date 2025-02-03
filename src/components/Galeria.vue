@@ -60,8 +60,8 @@
 </template>
 
 <script setup>
-import { useRouter } from "vue-router";
-import { ref, computed } from "vue";
+import { useRouter, useRoute  } from "vue-router";
+import { ref, computed, onMounted  } from "vue";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
@@ -70,6 +70,7 @@ import "swiper/css/pagination";
 
 // Definir el router
 const router = useRouter();
+const route = useRoute();
 
 // Función para redirigir al inicio
 const goToHome = () => {
@@ -206,6 +207,12 @@ const sports = ref([
 
 const searchQuery = ref("");
 const selectedCategory = ref("");
+
+onMounted(() => {
+  if (route.query.prueba) {
+    selectedCategory.value = route.query.prueba;
+  }
+});
 
 const filteredSports = computed(() =>
   sports.value.filter(

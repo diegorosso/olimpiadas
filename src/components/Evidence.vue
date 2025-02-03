@@ -245,9 +245,14 @@ export default {
       this.selectedProject = null;
     },
     goToGallery() {
-      this.$router.push("/galeria"); // Ajusta la ruta según sea necesario
-    },
+    if (this.selectedProject) {
+      this.$router.push({
+        path: "/galeria",
+        query: { prueba: this.selectedProject.title },
+      });
+    }
   },
+}
 };
 </script>
 

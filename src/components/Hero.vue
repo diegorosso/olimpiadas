@@ -16,7 +16,7 @@
 
       <figure class="hero-banner">
         <img
-          src="../assets/imagenes/hero.jpg"
+          src="../assets/imagenes/fotos/pruebas/Final/final2.webp"
           width="720"
           height="673"
           alt="hero banner"

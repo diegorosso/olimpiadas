@@ -1,7 +1,7 @@
 <template>
   <section class="section about" id="olimpiadas" aria-label="about">
     <div class="container">
-      <div class="about-banner img-holder" style="--width: 720; --height: 960">
+      <div class="about-banner img-holder" style="--width: 720; --height: 960" data-aos="fade-right">
         <img
           src="../assets/imagenes/fotos/pruebas/Final/final6.webp"
           width="720"
@@ -18,7 +18,7 @@
         </a>
       </div>
 
-      <div class="about-content">
+      <div class="about-content" data-aos="fade-left">
         <h2 class="h2 section-title">Sobre as Olimpíadas Rurais</h2>
 
         <p class="section-text">
@@ -78,6 +78,16 @@
     </div>
   </section>
 </template>
+
+<script setup>
+import { onMounted } from 'vue';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+onMounted(() => {
+  AOS.init();
+});
+</script>
 
 <style scoped>
 .about {

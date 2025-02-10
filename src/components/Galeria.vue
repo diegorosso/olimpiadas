@@ -1,6 +1,6 @@
 <template>
-  <div class="gallery-container">
-    <h1 class="title">Olimpiadas Rurais Galeria</h1>
+  <div class="gallery-container" data-aos="fade-up">
+    <h1 class="title" >Olimpiadas Rurais Galeria</h1>
 
     <div
       style="
@@ -51,7 +51,7 @@
             v-for="(image, imgIndex) in category.images"
             :key="imgIndex"
           >
-            <img :src="image" :alt="category.title" class="sport-image" />
+            <img :src="image" :alt="category.title" class="sport-image"  loading="lazy"/>
           </swiper-slide>
         </swiper>
       </div>
@@ -67,6 +67,12 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+onMounted(() => {
+  AOS.init();
+});
 
 // Definir el router
 const router = useRouter();

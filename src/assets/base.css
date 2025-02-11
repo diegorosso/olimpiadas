@@ -144,6 +144,7 @@ html {
   font-family: var(--ff-roboto);
   font-size: 10px;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -151,6 +152,7 @@ body {
   color: var(--gray-web);
   font-size: 1.6rem;
   line-height: 1.8;
+  overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {

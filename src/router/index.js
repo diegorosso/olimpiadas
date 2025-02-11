@@ -1,10 +1,10 @@
 import { createRouter, createWebHistory } from "vue-router";
+import HomeView from "../views/HomeView.vue"; // Ahora importamos HomeView
 import GalleryComponent from "../components/Galeria.vue";
-import Home from "../components/Hero.vue";
 
 const routes = [
-  { path: "/", name: "home", component: Home },
-  { path: "/galeria", name: "galeria", component: GalleryComponent },
+  { path: "/", name: "home", component: HomeView }, // Cambiamos Hero por HomeView
+  { path: "/galeria", name: "Galeria", component: () => import("../components/Galeria.vue") },
 ];
 
 const router = createRouter({

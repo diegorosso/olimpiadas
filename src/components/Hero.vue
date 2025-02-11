@@ -4,19 +4,21 @@
       <div class="hero-content">
         <p class="hero-subtitle">Olimpiadas Rurais</p>
 
-        <h1 class="h1 hero-title">Un encontro de tradición e deporte</h1>
+        <h1 class="h1 hero-title">Ediciones anteriores</h1>
 
         <p class="hero-text">
-          As olimpíadas rurais celebran a conexión coas nosas raíces e o
-          espírito deportivo no campo.
+          Recordamos as edicións pasadas das Olimpíadas Rurais, onde tradición e
+          deporte se uniron para crear experiencias inesquecibles
         </p>
 
-        <router-link to="/galeria" class="btn btn-primary">Galería de imágenes</router-link>
+        <router-link to="/galeria" class="btn btn-primary"
+          >Ver galería</router-link
+        >
       </div>
 
       <figure class="hero-banner">
         <img
-          src="../assets/imagenes/fotos/pruebas/Final/final2.webp"
+          src="../assets/imagenes/hero.jpg"
           width="720"
           height="673"
           alt="hero banner"

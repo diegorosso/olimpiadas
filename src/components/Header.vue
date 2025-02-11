@@ -4,13 +4,15 @@
       <img
         class="imagen-logo"
         src="../assets/imagenes/Sin título-1.png"
-        alt=""
+        alt="Logo"
+        @click="scrollToTop"
       />
 
       <nav
         class="navbar container"
         :class="{ active: navbarActive }"
         data-navbar
+        v-if="$route.name !== 'Galeria'"
       >
         <ul class="navbar-list">
           <li>
@@ -34,7 +36,7 @@
         </ul>
       </nav>
 
-      <button aria-label="Toggle menu displaynone" @click="toggleNavbar">
+      <button aria-label="Toggle menu" @click="toggleNavbar">
         <ion-icon
           name="menu-outline"
           class="open bottone"
@@ -51,6 +53,8 @@
 </template>
 
 <script>
+import { nextTick } from "vue";
+
 export default {
   data() {
     return {
@@ -66,16 +70,20 @@ export default {
       this.navbarActive = false; // Cierra el navbar cuando se hace clic en un enlace
     },
     handleScroll() {
-      // Cambia el estado de 'headerActive' según el desplazamiento de la página
       this.headerActive = window.scrollY > 100;
+    },
+    scrollToTop() {
+      this.$router.push("/").then(() => {
+        nextTick(() => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      });
     },
   },
   mounted() {
-    // Agrega el event listener para el scroll cuando el componente está montado
     window.addEventListener("scroll", this.handleScroll);
   },
-  destroyed() {
-    // Elimina el event listener para evitar fugas de memoria
+  beforeUnmount() {
     window.removeEventListener("scroll", this.handleScroll);
   },
 };
@@ -180,9 +188,8 @@ export default {
   width: 40px;
   height: 40px;
 }
-  
+
 @media (min-width: 992px) {
-  
   .nav-toggle-btn {
     display: none;
   }
@@ -232,8 +239,9 @@ export default {
 }
 .imagen-logo {
   height: 50px;
+  cursor: pointer;
 }
 .navbar {
-    order: 1; /* Mueve la navegación al extremo izquierdo */
-  }
+  order: 1;
+}
 </style>

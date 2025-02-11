@@ -1,15 +1,8 @@
 <template>
   <div class="gallery-container" data-aos="fade-up">
-    <h1 class="title" >Olimpiadas Rurais Galeria</h1>
+    <h1 class="title">Olimpiadas Rurais Galeria</h1>
 
-    <div
-      style="
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-      "
-    >
+    <div class="input-container">
       <input
         v-model="searchQuery"
         type="text"
@@ -27,9 +20,6 @@
           {{ category.title }}
         </option>
       </select>
-      <button @click="goToHome" class="back-to-home-btn">
-        Volver al inicio
-      </button>
     </div>
     <div class="gallery">
       <div
@@ -51,7 +41,12 @@
             v-for="(image, imgIndex) in category.images"
             :key="imgIndex"
           >
-            <img :src="image" :alt="category.title" class="sport-image"  loading="lazy"/>
+            <img
+              :src="image"
+              :alt="category.title"
+              class="sport-image"
+              loading="lazy"
+            />
           </swiper-slide>
         </swiper>
       </div>
@@ -60,18 +55,19 @@
 </template>
 
 <script setup>
-import { useRouter, useRoute  } from "vue-router";
-import { ref, computed, onMounted  } from "vue";
+import { useRouter, useRoute } from "vue-router";
+import { ref, computed, onMounted } from "vue";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 onMounted(() => {
   AOS.init();
+  window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
 // Definir el router
@@ -231,6 +227,15 @@ const filteredSports = computed(() =>
 </script>
 
 <style scoped>
+.input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  margin-top: 5rem;
+}
+
 .gallery {
   display: flex;
   flex-direction: column;
@@ -263,9 +268,8 @@ const filteredSports = computed(() =>
 .search-input,
 .category-select {
   width: 100%;
-  max-width: 450px;
+  max-width: 300px;
   padding: 12px;
-  margin-bottom: 15px;
   border: 2px solid #ccc;
   border-radius: 8px;
   font-size: 1rem;

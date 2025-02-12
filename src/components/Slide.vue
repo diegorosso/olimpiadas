@@ -11,10 +11,10 @@
     >
       <swiper-slide v-for="(image, index) in images" :key="index">
         <div class="slide" :style="{ backgroundImage: `url(${image})` }">
-          <!--             <div class="overlay">
-              <h1 class="title">Olimpiadas Rurais</h1>
-              <p class="subtitle">¡Vive la emoción del deporte rural!</p>
-            </div> -->
+<!--           <div class="overlay">
+            <h1 class="title">Olimpiadas Rurais</h1>
+            <p class="subtitle">¡Vive la emoción del deporte rural!</p>
+          </div> -->
         </div>
       </swiper-slide>
     </swiper>

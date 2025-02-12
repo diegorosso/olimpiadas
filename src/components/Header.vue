@@ -1,12 +1,15 @@
 <template>
   <header class="header" :class="{ active: headerActive }" data-header>
     <div class="container">
-      <img
-        class="imagen-logo"
-        src="../assets/imagenes/Sin título-1.png"
-        alt="Logo"
-        @click="scrollToTop"
-      />
+      <div class="logo-container">
+        <img
+          class="imagen-logo"
+          src="../assets/imagenes/Sin título-1.png"
+          alt="Logo"
+          @click="scrollToTop"
+        />
+        <span class="logo-text">Olimpiadas Rurais</span>
+      </div>
 
       <nav
         class="navbar container"
@@ -90,6 +93,21 @@ export default {
 </script>
 
 <style scoped>
+
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Espaciado entre logo y texto */
+}
+
+.logo-text {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--black);
+  white-space: nowrap; /* Evita que se divida en varias líneas */
+}
+
 .header {
   position: fixed;
   top: 0;

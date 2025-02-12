@@ -45,11 +45,12 @@
       </ul>
       <div v-if="selectedProject" class="modal-overlay" @click="closeModal">
         <div class="modal-content" @click.stop>
-          <ion-icon
+<!--           <ion-icon
             name="close-outline"
             class="close-icon"
-            @click.stop="closeModal"
-          ></ion-icon>
+            @click="logClick"
+          ></ion-icon> -->
+          <button class="close-icon" @click="closeModal">X</button>
           <h2>{{ selectedProject.title }}</h2>
           <p :style="{ whiteSpace: 'pre-line' }">
             {{ selectedProject.description }}
@@ -237,13 +238,19 @@ export default {
       selectedProject: null, // Proyecto seleccionado
     };
   },
+
   methods: {
     openModal(project) {
       this.selectedProject = project;
     },
     closeModal() {
+      console.log("close");
       this.selectedProject = null;
     },
+    logClick() {
+    console.log("Click en el icono de cierre");
+    this.closeModal();
+  },
     goToGallery() {
     if (this.selectedProject) {
       this.$router.push({
@@ -334,7 +341,8 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000;
+  z-index: 999;
+  pointer-events: auto; 
 }
 
 .modal-content {
@@ -391,11 +399,12 @@ export default {
 
 .close-icon {
   position: absolute;
-  top: 10px;
+  top: 2px;
   right: 10px;
-  font-size: 24px;
-  cuersor: pointer;
+  font-size: 18px;
+  cursor: pointer;
   color: #333;
+  z-index: 1000;
 }
 
 @keyframes fadeIn {

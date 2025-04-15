@@ -87,7 +87,7 @@ export default {
     return {
       projects: [
         {
-          title: "El Garrote",
+          title: "Garrote",
           subtitle: "Velocidade e Axilidade",
           alt: "Garrote",
           img: garrote,
@@ -108,7 +108,7 @@ export default {
           Sistema: "Sistema de puntuación: Suma de puntos",
         },
         {
-          title: "Cucaña",
+          title: "Cucuña",
           subtitle: "Traballo en Equipo",
           alt: "Cucaña",
           img: cucuña,
@@ -119,7 +119,7 @@ export default {
         },
 
         {
-          title: "A Piola",
+          title: "Piolas",
           subtitle: "Velocidade e Axilidade",
           alt: "Piolas",
           img: piolas,
@@ -141,7 +141,7 @@ export default {
             "Sistema de puntuación: se sumarán los tiempos de las carreras de chicas y de la chicos de cada equipo y se hará una clasificación.",
         },
         {
-          title: "Lanzamiento de Adoquín",
+          title: "Lanzamiento de Adoquin",
           subtitle: "Habilidade e Forza",
           alt: "Lanzamiento de Adoquín",
           img: lanzamiento,
@@ -223,7 +223,7 @@ export default {
             "Sistema de puntuación: se hará una clasificación con los tiempos empleados por cada equipo después de restar las penalizaciones. El equipo que más puntos obtenga será el equipo que menos tiempo emplee en realizar el recorrido",
         },
         {
-          title: "Cuerda",
+          title: "Cuerdas",
           subtitle: "Velocidade e Axilidade",
           alt: "Cuerda",
           img: cuerda,

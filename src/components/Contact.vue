@@ -1,114 +1,143 @@
 <template>
-    <section class="section contact" id="contact" aria-label="contact">
-      <div class="container">
-        <h2 class="h2 section-title">Contáctanos para las Olimpiadas Rurais</h2>
-  
-        <p class="section-text">
-          ¿Tienes dudas o necesitas más información sobre las Olimpiadas Rurais? Envíanos un mensaje y estaremos encantados de ayudarte.
-        </p>
-  
-        <form action="" class="contact-form">
-          <div class="input-wrapper">
-            <input
-              type="text"
-              name="name"
-              aria-label="name"
-              placeholder="Tu nombre*"
-              required
-              class="input-field"
-            />
-  
-            <input
-              type="email"
-              name="email_address"
-              aria-label="email"
-              placeholder="Correo electrónico*"
-              required
-              class="input-field"
-            />
-          </div>
-  
-          <div class="input-wrapper">
-            <input
-              type="text"
-              name="subject"
-              aria-label="subject"
-              placeholder="Asunto"
-              class="input-field"
-            />
-  
-            <input
-              type="number"
-              name="phone"
-              aria-label="phone"
-              placeholder="Número de teléfono"
-              class="input-field"
-            />
-          </div>
-  
-          <textarea
-            name="message"
-            aria-label="message"
-            placeholder="Tu mensaje...*"
+  <section class="section contact" id="contact" aria-label="contact">
+    <div class="container">
+      <h2 class="h2 section-title">Contáctanos para las Olimpiadas Rurais</h2>
+
+      <p class="section-text">
+        ¿Tienes dudas o necesitas más información sobre las Olimpiadas Rurais?
+        Envíanos un mensaje y estaremos encantados de ayudarte.
+      </p>
+
+      <form action="" class="contact-form">
+        <div class="input-wrapper">
+          <input
+            type="text"
+            name="name"
+            aria-label="name"
+            placeholder="Tu nombre*"
             required
             class="input-field"
-          ></textarea>
-  
-          <button type="submit" class="btn btn-primary">Enviar mensaje</button>
-        </form>
-  
-        <ul class="contact-list">
-          <li class="contact-item">
-            <div class="contact-card">
-              <div class="card-icon">
-                <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
-              </div>
-  
-              <div class="card-content">
-                <h3 class="h3 card-title">Correo Electrónico</h3>
-  
-                <a href="mailto:info@olimpiadasrurais.com" class="card-link">info@olimpiadasrurais.com</a>
-                <a href="mailto:contacto@olimpiadasrurais.com" class="card-link">contacto@olimpiadasrurais.com</a>
-              </div>
+          />
+
+          <input
+            type="email"
+            name="email_address"
+            aria-label="email"
+            placeholder="Correo electrónico*"
+            required
+            class="input-field"
+          />
+        </div>
+
+        <div class="input-wrapper">
+          <input
+            type="text"
+            name="subject"
+            aria-label="subject"
+            placeholder="Asunto"
+            class="input-field"
+          />
+
+          <input
+            type="number"
+            name="phone"
+            aria-label="phone"
+            placeholder="Número de teléfono"
+            class="input-field"
+          />
+        </div>
+
+        <textarea
+          name="message"
+          aria-label="message"
+          placeholder="Tu mensaje...*"
+          required
+          class="input-field"
+        ></textarea>
+
+        <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+      </form>
+
+      <ul class="contact-list">
+        <!-- Correo -->
+        <li class="contact-item">
+          <div class="contact-card">
+            <div class="card-icon">
+              <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
             </div>
-          </li>
-  
-          <li class="contact-item">
-            <div class="contact-card">
-              <div class="card-icon">
-                <ion-icon name="map-outline" aria-hidden="true"></ion-icon>
-              </div>
-  
-              <div class="card-content">
-                <h3 class="h3 card-title">Visítanos</h3>
-  
-                <address class="card-address">
-                  Calle Rural 27, Monte Alegre,<br />
-                  RS, Brasil
-                </address>
-              </div>
+
+            <div class="card-content">
+              <h3 class="h3 card-title">Correo Electrónico</h3>
+              <a href="mailto:info@olimpiadasrurais.com" class="card-link">info@olimpiadasrurais.com</a>
+              <a href="mailto:contacto@olimpiadasrurais.com" class="card-link">contacto@olimpiadasrurais.com</a>
             </div>
-          </li>
-  
-          <li class="contact-item">
-            <div class="contact-card">
-              <div class="card-icon">
-                <ion-icon name="headset-outline" aria-hidden="true"></ion-icon>
-              </div>
-  
-              <div class="card-content">
-                <h3 class="h3 card-title">Llámanos</h3>
-  
-                <a href="tel:+5551998765432" class="card-link">+55 51 99876 5432</a>
-                <a href="tel:+5551987654321" class="card-link">+55 51 98765 4321</a>
-              </div>
+          </div>
+        </li>
+
+        <!-- Dirección -->
+        <li class="contact-item">
+          <div class="contact-card">
+            <div class="card-icon">
+              <ion-icon name="map-outline" aria-hidden="true"></ion-icon>
             </div>
-          </li>
-        </ul>
-      </div>
-    </section>
-  </template>
-  
+
+            <div class="card-content">
+              <h3 class="h3 card-title">Visítanos</h3>
+              <address class="card-address">
+                Calle Rural 27, Monte Alegre,<br />
+                RS, Brasil
+              </address>
+            </div>
+          </div>
+        </li>
+
+        <!-- Teléfono -->
+        <li class="contact-item">
+          <div class="contact-card">
+            <div class="card-icon">
+              <ion-icon name="headset-outline" aria-hidden="true"></ion-icon>
+            </div>
+
+            <div class="card-content">
+              <h3 class="h3 card-title">Llámanos</h3>
+              <a href="tel:+5551998765432" class="card-link">+55 51 99876 5432</a>
+              <a href="tel:+5551987654321" class="card-link">+55 51 98765 4321</a>
+            </div>
+          </div>
+        </li>
+
+        <!-- Redes Sociales -->
+        <li class="contact-item">
+          <div class="contact-card">
+            <div class="card-icon">
+              <ion-icon name="share-social-outline" aria-hidden="true"></ion-icon>
+            </div>
+
+            <div class="card-content">
+              <h3 class="h3 card-title">Redes Sociales</h3>
+              <a
+                href="https://www.instagram.com/olimpiadasrurais"
+                target="_blank"
+                class="card-link social-link"
+              >
+                <ion-icon name="logo-instagram" aria-hidden="true"></ion-icon>
+                Instagram
+              </a>
+              <a
+                href="https://www.facebook.com/profile.php?id=61561890093532"
+                target="_blank"
+                class="card-link social-link"
+              >
+                <ion-icon name="logo-facebook" aria-hidden="true"></ion-icon>
+                Facebook
+              </a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+</template>
 
 <style scoped>
 .contact {
@@ -196,7 +225,7 @@ textarea.input-field {
 }
 
 .contact-item {
-  min-width: 100%;
+  width: calc(50% - 12px);
 }
 
 .contact-card {
@@ -236,6 +265,22 @@ textarea.input-field {
   color: var(--persian-rose);
 }
 
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.social-link ion-icon {
+  font-size: 18px;
+  color: var(--persian-rose);
+  transition: var(--transition-1);
+}
+
+.social-link:hover ion-icon {
+  color: var(--eerie-black);
+}
+
 @media (min-width: 575px) {
   .input-wrapper {
     display: flex;
@@ -253,7 +298,7 @@ textarea.input-field {
   }
 
   .contact-item {
-    min-width: calc(50% - 12.5px);
+    min-width: calc(50% - 12px);
   }
 }
 

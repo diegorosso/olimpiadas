@@ -9,7 +9,14 @@
 
       <h2 class="h2 section-title">¡Participa en las Olimpiadas Rurais!</h2>
 
-      <a href="#" class="btn btn-secondary">Únete ahora</a>
+      <a
+        href="https://wa.me/34672523511?text=Hola%20quiero%20participar%20de%20las%20olimpiadas%20rurais%202025"
+        class="btn btn-secondary"
+        target="_blank"
+        rel="noopener"
+      >
+        Únete ahora
+      </a>
     </div>
   </section>
 </template>

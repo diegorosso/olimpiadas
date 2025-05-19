@@ -64,10 +64,10 @@ export default {
   },
   methods: {
     toggleNavbar() {
-      this.navbarActive = !this.navbarActive; // Alterna el estado del navbar
+      this.navbarActive = !this.navbarActive; 
     },
     closeNavbar() {
-      this.navbarActive = false; // Cierra el navbar cuando se hace clic en un enlace
+      this.navbarActive = false; 
     },
     handleScroll() {
       this.headerActive = window.scrollY > 100;

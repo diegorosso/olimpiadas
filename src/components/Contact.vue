@@ -8,7 +8,7 @@
         Envíanos un mensaje y estaremos encantados de ayudarte.
       </p>
 
-      <form action="" class="contact-form">
+      <form class="contact-form" @submit.prevent="sendEmail">
         <div class="input-wrapper">
           <input
             type="text"
@@ -17,6 +17,7 @@
             placeholder="Tu nombre*"
             required
             class="input-field"
+            v-model="formData.name"
           />
 
           <input
@@ -26,17 +27,18 @@
             placeholder="Correo electrónico*"
             required
             class="input-field"
+            v-model="formData.email"
           />
         </div>
 
         <div class="input-wrapper">
-
           <input
             type="number"
             name="phone"
             aria-label="phone"
             placeholder="Número de teléfono"
             class="input-field"
+            v-model="formData.phone"
           />
         </div>
 
@@ -46,52 +48,61 @@
           placeholder="Tu mensaje...*"
           required
           class="input-field"
+          v-model="formData.message"
         ></textarea>
 
-        <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+        <label v-if="guidedVisit" class="checkbox-container">
+          <input type="checkbox" v-model="formData.guidedVisit" />
+          Visita guiada
+        </label>
+
+        <button
+          type="submit"
+          class="btn btn-primary"
+          :class="{ disabled: !isValidForm() }"
+        >
+          <span v-if="!showSpinner">
+            <ion-icon class="padding" name="paper-plane-sharp"></ion-icon>
+            Enviar mensaje
+          </span>
+          <VueSpinner v-if="showSpinner" size="30" color="#fff" />
+        </button>
       </form>
 
+      <!-- Información de contacto -->
       <ul class="contact-list">
-        <!-- Correo -->
         <li class="contact-item">
           <div class="contact-card">
             <div class="card-icon">
               <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
             </div>
-
             <div class="card-content">
               <h3 class="h3 card-title">Correo Electrónico</h3>
-              <a href="mailto:info@olimpiadasrurais.com" class="card-link"
-                >colectivohercules@gmail.com</a
-              >
+              <a href="mailto:colectivohercules@gmail.com" class="card-link">
+                colectivohercules@gmail.com
+              </a>
             </div>
           </div>
         </li>
 
-        <!-- Dirección -->
-
-        <!-- Teléfono -->
         <li class="contact-item">
           <div class="contact-card">
             <div class="card-icon">
               <ion-icon name="headset-outline" aria-hidden="true"></ion-icon>
             </div>
-
             <div class="card-content">
               <h3 class="h3 card-title">¿Hablámos?</h3>
               <a
                 href="https://wa.me/34672523511"
                 target="_blank"
                 class="card-link"
-                >+34 672 523 511</a
               >
-              
-              >
+                +34 672 523 511
+              </a>
             </div>
           </div>
         </li>
 
-        <!-- Redes Sociales -->
         <li class="contact-item">
           <div class="contact-card">
             <div class="card-icon">
@@ -100,7 +111,6 @@
                 aria-hidden="true"
               ></ion-icon>
             </div>
-
             <div class="card-content">
               <h3 class="h3 card-title">Redes Sociales</h3>
               <a
@@ -126,6 +136,103 @@
     </div>
   </section>
 </template>
+
+<script setup>
+import { ref, watch } from 'vue'
+import axios from 'axios'
+import { VueSpinner } from 'vue3-spinners'
+import { useModal } from 'vue-final-modal'
+import SimpleModalInfo from './SimpleModalInfo.vue'
+
+const props = defineProps({
+  guidedVisit: Boolean
+})
+
+const guidedVisit = ref(props.guidedVisit)
+
+const showSpinner = ref(false)
+
+const formData = ref({
+  name: '',
+  phone: '',
+  email: '',
+  message: '',
+  guidedVisit: false
+})
+
+watch(
+  () => props.guidedVisit,
+  (newVal) => {
+    guidedVisit.value = newVal
+    if (newVal) formData.value.guidedVisit = true
+  }
+)
+
+const isValidForm = () => {
+  const { name, email, message } = formData.value
+  return name !== '' && email.includes('@') && message !== ''
+}
+
+const { open, close, patchOptions } = useModal({
+  component: SimpleModalInfo,
+  attrs: {
+    modalTitle: '',
+    modalContent: '',
+    onBack: () => close()
+  }
+})
+
+async function sendEmail() {
+  showSpinner.value = true
+  const data = {
+    service_id: import.meta.env.VITE_EMAILJS_SERVICE_ID,
+    template_id: import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+    user_id: import.meta.env.VITE_EMAILJS_USER_ID,
+    accessToken: import.meta.env.VITE_EMAILJS_ACCESS_TOKEN,
+    template_params: {
+      name: formData.value.name,
+      phone: formData.value.phone,
+      email: formData.value.email,
+      message: formData.value.message,
+      guidedVisit: formData.value.guidedVisit ? 'Sí' : 'No especifica'
+    }
+  }
+
+  try {
+    await axios.post('https://api.emailjs.com/api/v1.0/email/send', data, {
+      headers: { 'Content-Type': 'application/json' }
+    })
+
+    showSpinner.value = false
+    patchOptions({
+      attrs: {
+        modalTitle: '¡Mensaje enviado con éxito!',
+        modalContent: ''
+      }
+    })
+    open()
+
+    formData.value = {
+      name: '',
+      phone: '',
+      email: '',
+      message: '',
+      guidedVisit: false
+    }
+  } catch (error) {
+    showSpinner.value = false
+    console.error(error)
+    patchOptions({
+      attrs: {
+        modalTitle: '¡Error inesperado!',
+        modalContent:
+          'No se pudo enviar tu mensaje. Por favor, inténtalo de nuevo más tarde.'
+      }
+    })
+    open()
+  }
+}
+</script>
 
 <style scoped>
 .contact {

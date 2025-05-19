@@ -71,7 +71,7 @@
 <script>
 import garrote from "@/assets/imagenes/fotos/pruebas/Garrote/garrote8.webp";
 import mizos from "@/assets/imagenes/fotos/pruebas/Mizos/mizos1.webp";
-import cucuña from "@/assets/imagenes/fotos/pruebas/Cucuña/cucuña4.webp";
+import cucaña from "@/assets/imagenes/fotos/pruebas/Cucaña/cucaña4.webp";
 import piolas from "@/assets/imagenes/fotos/pruebas/Piolas/piolas1.webp";
 import carrerasacos from "@/assets/imagenes/fotos/pruebas/Carrera de sacos/saco1.webp";
 import lanzamiento from "@/assets/imagenes/fotos/pruebas/Lanzamiento de adoquin/lanzamiento8.webp";
@@ -108,12 +108,12 @@ export default {
           Sistema: "Sistema de puntuación: Suma de puntos",
         },
         {
-          title: "Cucuña",
+          title: "Cucaña",
           subtitle: "Traballo en Equipo",
           alt: "Cucaña",
-          img: cucuña,
+          img: cucaña,
           description:
-            "El juego de la cucaña consiste en escalar un palo circular hasta una altura de cinco metros y tocar una campana. Va por tiempo y gana el equipo que llegue a la cima empleando menos tiempo.",
+            "El juego de la Cucaña consiste en escalar un palo circular hasta una altura de cinco metros y tocar una campana. Va por tiempo y gana el equipo que llegue a la cima empleando menos tiempo.",
           participantes: "Participantes: un hombre y una mujer de cada equipo.",
           Sistema: "Sistema de puntuación: Ganadores por tiempo.",
         },

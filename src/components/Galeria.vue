@@ -100,8 +100,8 @@ const combaModules = import.meta.glob(
   "@/assets/imagenes/fotos/pruebas/Comba/*.webp",
   { eager: true }
 );
-const cucuñaModules = import.meta.glob(
-  "@/assets/imagenes/fotos/pruebas/Cucuña/*.webp",
+const cucañaModules = import.meta.glob(
+  "@/assets/imagenes/fotos/pruebas/Cucaña/*.webp",
   { eager: true }
 );
 const cuerdasModules = import.meta.glob(
@@ -143,7 +143,7 @@ const carretillaImages = Object.values(carretillaModules).map(
 );
 const cintasllaImages = Object.values(cintasModules).map((img) => img.default);
 const combaImages = Object.values(combaModules).map((img) => img.default);
-const cucuñaImages = Object.values(cucuñaModules).map((img) => img.default);
+const cucañaImages = Object.values(cucañaModules).map((img) => img.default);
 const cuerdasImages = Object.values(cuerdasModules).map((img) => img.default);
 const garroteImages = Object.values(garroteModules).map((img) => img.default);
 const adoquinImages = Object.values(adoquinModules).map((img) => img.default);
@@ -174,8 +174,8 @@ const sports = ref([
     images: combaImages,
   },
   {
-    title: "Cucuña",
-    images: cucuñaImages,
+    title: "Cucaña",
+    images: cucañaImages,
   },
   {
     title: "Cuerdas",
@@ -212,7 +212,7 @@ const selectedCategory = ref("");
 
 onMounted(() => {
   if (route.query.prueba) {
-    selectedCategory.value = route.query.prueba;
+    selectedCategory.value = decodeURIComponent(route.query.prueba);
   }
 });
 
@@ -221,7 +221,7 @@ const filteredSports = computed(() =>
     (category) =>
       category.title.toLowerCase().includes(searchQuery.value.toLowerCase()) &&
       (selectedCategory.value === "" ||
-        category.title === selectedCategory.value)
+        category.title.toLowerCase() === selectedCategory.value.toLowerCase())
   )
 );
 </script>

@@ -30,13 +30,6 @@
         </div>
 
         <div class="input-wrapper">
-          <input
-            type="text"
-            name="subject"
-            aria-label="subject"
-            placeholder="Asunto"
-            class="input-field"
-          />
 
           <input
             type="number"
@@ -68,28 +61,14 @@
 
             <div class="card-content">
               <h3 class="h3 card-title">Correo Electrónico</h3>
-              <a href="mailto:info@olimpiadasrurais.com" class="card-link">info@olimpiadasrurais.com</a>
-              <a href="mailto:contacto@olimpiadasrurais.com" class="card-link">contacto@olimpiadasrurais.com</a>
+              <a href="mailto:info@olimpiadasrurais.com" class="card-link"
+                >colectivohercules@gmail.com</a
+              >
             </div>
           </div>
         </li>
 
         <!-- Dirección -->
-        <li class="contact-item">
-          <div class="contact-card">
-            <div class="card-icon">
-              <ion-icon name="map-outline" aria-hidden="true"></ion-icon>
-            </div>
-
-            <div class="card-content">
-              <h3 class="h3 card-title">Visítanos</h3>
-              <address class="card-address">
-                Calle Rural 27, Monte Alegre,<br />
-                RS, Brasil
-              </address>
-            </div>
-          </div>
-        </li>
 
         <!-- Teléfono -->
         <li class="contact-item">
@@ -99,9 +78,15 @@
             </div>
 
             <div class="card-content">
-              <h3 class="h3 card-title">Llámanos</h3>
-              <a href="tel:+5551998765432" class="card-link">+55 51 99876 5432</a>
-              <a href="tel:+5551987654321" class="card-link">+55 51 98765 4321</a>
+              <h3 class="h3 card-title">¿Hablámos?</h3>
+              <a
+                href="https://wa.me/34672523511"
+                target="_blank"
+                class="card-link"
+                >+34 672 523 511</a
+              >
+              
+              >
             </div>
           </div>
         </li>
@@ -110,7 +95,10 @@
         <li class="contact-item">
           <div class="contact-card">
             <div class="card-icon">
-              <ion-icon name="share-social-outline" aria-hidden="true"></ion-icon>
+              <ion-icon
+                name="share-social-outline"
+                aria-hidden="true"
+              ></ion-icon>
             </div>
 
             <div class="card-content">
@@ -219,7 +207,6 @@ textarea.input-field {
 
 .contact-list {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   gap: 30px 12px;
 }
@@ -281,6 +268,17 @@ textarea.input-field {
   color: var(--eerie-black);
 }
 
+@media (max-width: 574px) {
+  .contact-list {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .contact-item {
+    width: 100%;
+  }
+}
+
 @media (min-width: 575px) {
   .input-wrapper {
     display: flex;
@@ -289,6 +287,10 @@ textarea.input-field {
 
   .contact-item {
     min-width: calc(50% - 18px);
+  }
+
+  .contact-card {
+    width: 360px;
   }
 }
 

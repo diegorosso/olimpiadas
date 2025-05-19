@@ -20,16 +20,13 @@
         <ul class="navbar-list">
           <li>
             <a href="#olimpiadas" class="navbar-link" @click="closeNavbar"
-              >Que son</a
+              >Qué son</a
             >
           </li>
           <li>
             <a href="#project" class="navbar-link" @click="closeNavbar"
               >Pruebas</a
             >
-          </li>
-          <li>
-            <a href="#blog" class="navbar-link" @click="closeNavbar">Blog</a>
           </li>
           <li>
             <a href="#contact" class="navbar-link" @click="closeNavbar"

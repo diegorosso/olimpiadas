@@ -11,7 +11,7 @@
           class="img-cover image-animated"
         />
 
-        <a href="https://www.instagram.com/reel/C9kpqa_tIde/" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.instagram.com/reel/DAG9khKt8zi/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA%3D%3D" target="_blank" rel="noopener noreferrer">
           <button class="play-btn" aria-label="Ver video explicativo">
             <ion-icon name="play" aria-hidden="true"></ion-icon>
           </button>
@@ -27,7 +27,7 @@
           espírito competitivo e a cooperación entre participantes.
         </p>
 
-        <h3 class="h3">Que son?</h3>
+        <h3 class="h3">Qué son?</h3>
 
         <p class="section-text">
           As Olimpíadas Rurais buscan unir á comunidade rural a través de

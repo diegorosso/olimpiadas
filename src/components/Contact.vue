@@ -69,6 +69,15 @@
         </button>
       </form>
 
+      <!-- Modal interno -->
+      <div v-if="showModal" class="modal-backdrop" @click="closeModal">
+        <div class="modal" @click.stop>
+          <h3>{{ modalTitle }}</h3>
+          <p>{{ modalContent }}</p>
+          <button @click="closeModal" class="btn btn-primary">Cerrar</button>
+        </div>
+      </div>
+
       <!-- Información de contacto -->
       <ul class="contact-list">
         <li class="contact-item">
@@ -92,11 +101,7 @@
             </div>
             <div class="card-content">
               <h3 class="h3 card-title">¿Hablámos?</h3>
-              <a
-                href="https://wa.me/34672523511"
-                target="_blank"
-                class="card-link"
-              >
+              <a href="https://wa.me/34672523511" target="_blank" class="card-link">
                 +34 672 523 511
               </a>
             </div>
@@ -106,26 +111,15 @@
         <li class="contact-item">
           <div class="contact-card">
             <div class="card-icon">
-              <ion-icon
-                name="share-social-outline"
-                aria-hidden="true"
-              ></ion-icon>
+              <ion-icon name="share-social-outline" aria-hidden="true"></ion-icon>
             </div>
             <div class="card-content">
               <h3 class="h3 card-title">Redes Sociales</h3>
-              <a
-                href="https://www.instagram.com/olimpiadasrurais"
-                target="_blank"
-                class="card-link social-link"
-              >
+              <a href="https://www.instagram.com/olimpiadasrurais" target="_blank" class="card-link social-link">
                 <ion-icon name="logo-instagram" aria-hidden="true"></ion-icon>
                 Instagram
               </a>
-              <a
-                href="https://www.facebook.com/profile.php?id=61561890093532"
-                target="_blank"
-                class="card-link social-link"
-              >
+              <a href="https://www.facebook.com/profile.php?id=61561890093532" target="_blank" class="card-link social-link">
                 <ion-icon name="logo-facebook" aria-hidden="true"></ion-icon>
                 Facebook
               </a>
@@ -138,103 +132,117 @@
 </template>
 
 <script setup>
-import { ref, watch } from 'vue'
-import axios from 'axios'
-import { VueSpinner } from 'vue3-spinners'
-import { useModal } from 'vue-final-modal'
-import SimpleModalInfo from './SimpleModalInfo.vue'
+import { ref, watch } from "vue";
+import axios from "axios";
+import { VueSpinner } from "vue3-spinners";
 
 const props = defineProps({
-  guidedVisit: Boolean
-})
+  guidedVisit: Boolean,
+});
 
-const guidedVisit = ref(props.guidedVisit)
+const guidedVisit = ref(props.guidedVisit);
 
-const showSpinner = ref(false)
+const showSpinner = ref(false);
+const showModal = ref(false);
+const modalTitle = ref("");
+const modalContent = ref("");
 
 const formData = ref({
-  name: '',
-  phone: '',
-  email: '',
-  message: '',
-  guidedVisit: false
-})
+  name: "",
+  phone: "",
+  email: "",
+  message: "",
+  guidedVisit: false,
+});
 
 watch(
   () => props.guidedVisit,
   (newVal) => {
-    guidedVisit.value = newVal
-    if (newVal) formData.value.guidedVisit = true
+    guidedVisit.value = newVal;
+    if (newVal) formData.value.guidedVisit = true;
   }
-)
+);
 
 const isValidForm = () => {
-  const { name, email, message } = formData.value
-  return name !== '' && email.includes('@') && message !== ''
+  const { name, email, message } = formData.value;
+  return name !== "" && email.includes("@") && message !== "";
+};
+
+function closeModal() {
+  showModal.value = false;
 }
 
-const { open, close, patchOptions } = useModal({
-  component: SimpleModalInfo,
-  attrs: {
-    modalTitle: '',
-    modalContent: '',
-    onBack: () => close()
-  }
-})
-
 async function sendEmail() {
-  showSpinner.value = true
+  showSpinner.value = true;
+
   const data = {
     service_id: import.meta.env.VITE_EMAILJS_SERVICE_ID,
     template_id: import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
     user_id: import.meta.env.VITE_EMAILJS_USER_ID,
     accessToken: import.meta.env.VITE_EMAILJS_ACCESS_TOKEN,
     template_params: {
-      name: formData.value.name,
-      phone: formData.value.phone,
-      email: formData.value.email,
+      to_name: "Equipo Olimpiadas Rurais",
+      from_name: formData.value.name.split(" ")[0] || "",
+      from_lastname: formData.value.name.split(" ").slice(1).join(" ") || "",
+      from_email: formData.value.email,
+      from_phone: formData.value.phone,
       message: formData.value.message,
-      guidedVisit: formData.value.guidedVisit ? 'Sí' : 'No especifica'
-    }
-  }
+      guidedVisit: formData.value.guidedVisit ? "Sí" : "No especifica",
+    },
+  };
 
   try {
-    await axios.post('https://api.emailjs.com/api/v1.0/email/send', data, {
-      headers: { 'Content-Type': 'application/json' }
-    })
+    await axios.post("https://api.emailjs.com/api/v1.0/email/send", data, {
+      headers: { "Content-Type": "application/json" },
+    });
 
-    showSpinner.value = false
-    patchOptions({
-      attrs: {
-        modalTitle: '¡Mensaje enviado con éxito!',
-        modalContent: ''
-      }
-    })
-    open()
+    showSpinner.value = false;
+    modalTitle.value = "¡Mensaje enviado con éxito!";
+    modalContent.value = "Gracias por contactarnos. Te responderemos pronto.";
+    showModal.value = true;
 
     formData.value = {
-      name: '',
-      phone: '',
-      email: '',
-      message: '',
-      guidedVisit: false
-    }
+      name: "",
+      phone: "",
+      email: "",
+      message: "",
+      guidedVisit: false,
+    };
   } catch (error) {
-    showSpinner.value = false
-    console.error(error)
-    patchOptions({
-      attrs: {
-        modalTitle: '¡Error inesperado!',
-        modalContent:
-          'No se pudo enviar tu mensaje. Por favor, inténtalo de nuevo más tarde.'
-      }
-    })
-    open()
+    showSpinner.value = false;
+    console.error(error);
+    modalTitle.value = "¡Error inesperado!";
+    modalContent.value = "No se pudo enviar tu mensaje. Por favor, inténtalo de nuevo más tarde.";
+    showModal.value = true;
   }
 }
 </script>
 
 <style scoped>
+
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 90%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
 .contact {
   background-color: var(--white-2);
 }

@@ -61,10 +61,7 @@
           class="btn btn-primary"
           :class="{ disabled: !isValidForm() }"
         >
-          <span v-if="!showSpinner">
-            <ion-icon class="padding" name="paper-plane-sharp"></ion-icon>
-            Enviar mensaje
-          </span>
+          <span v-if="!showSpinner"> Enviar mensaje </span>
           <VueSpinner v-if="showSpinner" size="30" color="#fff" />
         </button>
       </form>
@@ -101,7 +98,11 @@
             </div>
             <div class="card-content">
               <h3 class="h3 card-title">¿Hablámos?</h3>
-              <a href="https://wa.me/34672523511" target="_blank" class="card-link">
+              <a
+                href="https://wa.me/34672523511"
+                target="_blank"
+                class="card-link"
+              >
                 +34 672 523 511
               </a>
             </div>
@@ -111,15 +112,26 @@
         <li class="contact-item">
           <div class="contact-card">
             <div class="card-icon">
-              <ion-icon name="share-social-outline" aria-hidden="true"></ion-icon>
+              <ion-icon
+                name="share-social-outline"
+                aria-hidden="true"
+              ></ion-icon>
             </div>
             <div class="card-content">
               <h3 class="h3 card-title">Redes Sociales</h3>
-              <a href="https://www.instagram.com/olimpiadasrurais" target="_blank" class="card-link social-link">
+              <a
+                href="https://www.instagram.com/olimpiadasrurais"
+                target="_blank"
+                class="card-link social-link"
+              >
                 <ion-icon name="logo-instagram" aria-hidden="true"></ion-icon>
                 Instagram
               </a>
-              <a href="https://www.facebook.com/profile.php?id=61561890093532" target="_blank" class="card-link social-link">
+              <a
+                href="https://www.facebook.com/profile.php?id=61561890093532"
+                target="_blank"
+                class="card-link social-link"
+              >
                 <ion-icon name="logo-facebook" aria-hidden="true"></ion-icon>
                 Facebook
               </a>
@@ -212,15 +224,14 @@ async function sendEmail() {
     showSpinner.value = false;
     console.error(error);
     modalTitle.value = "¡Error inesperado!";
-    modalContent.value = "No se pudo enviar tu mensaje. Por favor, inténtalo de nuevo más tarde.";
+    modalContent.value =
+      "No se pudo enviar tu mensaje. Por favor, inténtalo de nuevo más tarde.";
     showModal.value = true;
   }
 }
 </script>
 
 <style scoped>
-
-
 .modal-backdrop {
   position: fixed;
   top: 0;
@@ -235,12 +246,31 @@ async function sendEmail() {
 }
 
 .modal {
-  background: white;
-  padding: 30px;
+ background: white;
+  padding: 30px 40px;
   border-radius: 12px;
   text-align: center;
   max-width: 90%;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px; /* Espacio entre los elementos del modal */
+}
+
+.modal h3 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.modal p {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.modal button {
+  margin-top: 10px;
+  align-self: center; /* Centra horizontalmente el botón */
 }
 
 .contact {
